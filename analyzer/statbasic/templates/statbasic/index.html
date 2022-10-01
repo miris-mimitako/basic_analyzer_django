@@ -1,1 +1,26 @@
-{%%}
+{% extends 'statbasic/base.html' %}
+
+{% block title %}HOME | Basic Analyzer{% endblock title %}
+
+
+{% block content %}
+
+<section id="blog_post" class="base__layout">
+    <h1>ようこそMiris Mimitakoへ</h1>
+
+    <p>このブログは私の学習の記録と、そこで学んだ技術の公開の場として存在しています。</p>
+
+    <p>技術や知識は拙いことがあるかもしれません。しかし、数をこなし、時間をかけて成長していくことで誰にも負けない大きな技術になると信じています。</p>
+
+    <p>ここでは私だけではなく、私の背中をみて頑張ろうとする皆さんを応援していきます。</p>
+
+    <p>超一流は生まれながらに超一流ではないのです。皆努力した結果、あの境地にたどり着けました。</p>
+    
+    <p>さぁ、最高の人生を楽しみましょう。あなたの努力は私が見ていますよ。</p>
+
+    <p>From Mimitako</p>
+
+</section>
+
+{% endblock content %}
+{% comment %} {% block footer %}{% include "mimitako_blog/footer.html" %}{% endblock footer %} {% endcomment %}

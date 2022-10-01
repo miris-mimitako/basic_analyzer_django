@@ -3,5 +3,5 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 class IndexView(TemplateView):
-    template_name = "mimitako_blog/index.html"
-    
+    template_name = "statbasic/index.html"
+
