@@ -13,24 +13,32 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 import json
+from . import secrets
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-open_json = open("analyzer/.secrets.json", "r")
-json_load = json.load(open_json)
-SECRET_KEY = json_load["secretkey"]
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# If you want to get a fixed secret key, set it to False.
+SECRETS_GEN = True
 
+if DEBUG and SECRETS_GEN: 
+    SG = secrets.SecretsGen()
+    SG.gen_key()
+SECRETS_PATH = Path(__file__).resolve().parent
+open_json = open(os.path.join(SECRETS_PATH, ".secrets.json"), "r")
+json_load = json.load(open_json)
+SECRET_KEY = json_load["secretkey"]
+
+ALLOWED_HOSTS = []
 
 # Application definition
 
