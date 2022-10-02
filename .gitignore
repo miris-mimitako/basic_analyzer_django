@@ -1,3 +1,4 @@
 *pycache*/
 *sqlite3*
 .secrets.json
+*migrations/
